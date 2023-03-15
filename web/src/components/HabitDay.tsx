@@ -23,6 +23,10 @@ export const HabitDay = ({
   const dayAndMonthy = dayjs(date).format("DD/MM");
   const dayOfWeek = dayjs(date).format("dddd");
 
+  function handleCompletedChanged(completed: number) {
+    console.log(completed);
+  }
+
   return (
     <Popover.Root>
       <Popover.Trigger
@@ -49,7 +53,7 @@ export const HabitDay = ({
 
           <ProgressBar progress={completedPercentage} />
 
-          <HabitsList date={date} />
+          <HabitsList date={date} onCompletedChange={handleCompletedChanged} />
 
           <Popover.Arrow height={8} width={16} className="fill-zinc-900" />
         </Popover.Content>
